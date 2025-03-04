@@ -19,7 +19,7 @@ Here, I have created this SQL project to demonstrate SQL skills and techniques. 
        for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), 
        and total sale amount.
 
-...sql
+```sql
 CREATE DATABASE p1_retail_db;
 create table retail_sale
 (
@@ -36,3 +36,10 @@ create table retail_sale
 		total_sale float
 
 )
+  2. #### Data Exploration & cleaning
+      - Record Count: Determine the total number of records in 
+        the dataset.
+      - Customer Count: Find out how many unique customers are 
+        in the dataset.
+      - Category Count: Identify all unique product categories in the dataset.
+      - Null Value Check: Check for any null values in the dataset and delete records with missing data.
