@@ -1,5 +1,6 @@
 # Retail Sales Analysis SQL Project 
 **Project OverView**
+
 **Project Title**: Retail Sales Analysis
 
 Here, I have created this SQL project to demonstrate SQL skills and techniques. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. 
