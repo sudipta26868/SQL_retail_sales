@@ -12,4 +12,6 @@ Here, I have created this SQL project to demonstrate SQL skills and techniques. 
 4) **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
 
 **Project Structure**
-
+1. **Database Setup**
+   - **Database Creation**: At first I create a database named 
+       p1_retail_db.
