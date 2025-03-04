@@ -36,6 +36,7 @@ create table retail_sale
 		total_sale float
 
 )
+```sql
   2. #### Data Exploration & cleaning
       - Record Count: Determine the total number of records in 
         the dataset.
