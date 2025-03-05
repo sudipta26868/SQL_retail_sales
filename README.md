@@ -19,7 +19,7 @@ Here, I have created this SQL project to demonstrate SQL skills and techniques. 
        for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), 
        and total sale amount.
 
-```sql
+```
 CREATE DATABASE p1_retail_db;
 create table retail_sale
 (
