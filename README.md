@@ -38,13 +38,13 @@ create table retail_sale
 )
 ```
   2. ### Data Exploration & cleaning
-      - ####Record Count: Determine the total number of records in 
+      - Record Count: Determine the total number of records in 
         the dataset.
-      - ####Customer Count: Find out how many unique customers are 
+      - Customer Count: Find out how many unique customers are 
         in the dataset.
-      - ####Category Count: Identify all unique product categories 
+      - Category Count: Identify all unique product categories 
         in the dataset.
-      - ####Null Value Check: Check for any null values in the 
+      - Null Value Check: Check for any null values in the 
         dataset and delete records with missing data.
 
 
@@ -65,6 +65,7 @@ where transactions_id is null
 	  or cogs is null
 	  or total_sale is null;
 
+-- need to delete null values --
 delete from retail_sale 
 where transactions_id is null 
       or sale_date is null
@@ -82,7 +83,13 @@ select count(distinct customer_id) from retail_sale
 select count(distinct customer_id) as total_sale from retail_sale
 ```
 
-
+3. ###Data Analysis & Findings
+   **1) WRITE A QUERY TO RETRIEVE ALL COLUMNS FOR SALES MADE ON '2022-11-05'**
+   ```sql
+   SELECT * FROM RETAIL_SALE
+   WHERE sale_date = '2022-11-05';
+   ```
+   
 
 
 
