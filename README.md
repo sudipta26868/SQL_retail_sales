@@ -163,8 +163,8 @@ select count(distinct customer_id) as total_sale from retail_sale
 ```
 
 4) ### Reports
-   **Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
-   **Trend Analysis**: Insights into sales trends across different months and shifts.
-   **Customer Insights**: Reports on top customers and unique customer counts per category.
+   -**Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
+   -**Trend Analysis**: Insights into sales trends across different months and shifts.
+   -**Customer Insights**: Reports on top customers and unique customer counts per category.
 
 
