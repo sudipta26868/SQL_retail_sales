@@ -83,14 +83,84 @@ select count(distinct customer_id) from retail_sale
 select count(distinct customer_id) as total_sale from retail_sale
 ```
 
-3. ###Data Analysis & Findings
+3. ### Data Analysis & Findings
    **1) WRITE A QUERY TO RETRIEVE ALL COLUMNS FOR SALES MADE ON '2022-11-05'**
    ```sql
    SELECT * FROM RETAIL_SALE
    WHERE sale_date = '2022-11-05';
    ```
-   
+   **2) write a query to find all transactions where category is 'clothing' & the quantity sold is more than 4 in nov - 2022'**
+```sql
+   select * from retail_sale
+   where category = 'Clothing' and TO_CHAR(sale_date, 'yyyy-mm') = '2022-11' and quantiy >= 4;
+```
+   **3)Calculate the total sales for each category**
+```sql	
+   select category,sum(total_sale) from retail_sale
+   group by category;
+```
+  **4)write a query to find the avg. age of customers who purchased items from the 'Beauty' category**
+  ```sql
+	select category ,round(avg(age)) from retail_sale
+	where  category = 'Beauty'
+	group by category ;
+```
+  **5)write a sql query to find all transactions where total_sale is greater than 1000** 
+```sql
+	select * from retail_sale
+	where total_sale >=1000;
+```
+  **6)write a sql query to find the total number of transactions (transaction_id) made by each gender in each category**
+```sql
+	select category , gender , count(transactions_id) from retail_sale
+	group by gender , category
+	order by 1;
+```
+  **7)Calulate the avg sale for each month . find out best selling month in each year** 
+```sql
+	select avg(total_sale),extract(year from sale_date) as year from retail_sale
+	group by year;
+	select avg(total_sale),to_char(sale_date,'mm') as month from retail_sale
+	group by month
 
+	select year,month,avg_sale from 
+		(select avg(total_sale) as avg_sale, extract (month from sale_date) as month ,
+		extract(year from sale_date) as year ,
+		rank() over(partition by extract(year from sale_date) order by avg(total_sale) desc) as rank
+		from retail_sale
+		group by month , year) as t1
+	where rank = 1 ; 
+
+```
+  **8)write a sql query to find the top 5 customers based on the highest total sale**
+```sql
+	select customer_id,sum(total_sale) as highest_sale from retail_sale
+	group by customer_id 
+	order by highest_sale desc
+	limit 5;
+```
+  **9)write a sql query to find the number of unique customers who purchased items from each category**
+```sql
+	select count(distinct customer_id) , category from retail_sale
+	group by category
+```
+  **10)Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17):**
+```sql
+	with hourly_sale
+	as (
+	select * ,
+	case 
+	  when extract(hour from sale_time)<=12 then 'Morning'
+	  when extract(hour from sale_time) between 12 and 17 then 'Afternoon'
+	  else 'Evening'
+	  end as shift
+	from retail_Sale 
+	) 
+	select shift,count(*) as total_orders
+	from hourly_sale
+	group by shift 
+
+```
 
 
 
